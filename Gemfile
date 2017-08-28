@@ -27,6 +27,12 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'devise'
+gem 'popper_js'
+gem 'jquery-rails'
+gem 'bootstrap', '~> 4.0.0.beta'
+gem 'font-awesome-sass'
+gem 'font-awesome-rails'
+gem 'creek'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
