@@ -6,9 +6,14 @@ class ApplicationController < ActionController::Base
   def get_user
     @user = current_user
     @is_logged_in = user_signed_in?
-  end
-  
-  def auth_user
-    redirect_to root_url if !@is_logged_in
-  end
+    
+    @is_student = @is_logged_in && @user.role == 'student'    
+    @is_teacher = @is_logged_in && @user.role == 'teacher'  
+  end  
+  def auth_admin   
+        redirect_to root_url if !@is_admin  
+  end  
+  def auth_user    
+        redirect_to root_url if !@is_user  
+  end 
 end

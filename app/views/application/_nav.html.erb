@@ -14,19 +14,29 @@
           <a class="nav-link" href="/users/sign_up"> Register</a>
         </li>
       <% end %>
+     
+     
       
       <% if @is_logged_in %>
         <li class="nav-item">
           <a class="nav-link" href="/users/edit"><i class="fa fa-address-card-o"></i>&nbsp;&nbsp;Profile</a>
         </li>
         
+         
+        <% if @is_teacher %>
+          <li class="nav-item">
+             <a href ='/users' class="nav-link">Manage Profile</a> 
+          </li>
+        <% end %>
+        
         <a class="nav-link"><i class="fa fa-arrow-up"></i><%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "nav-link" %></a>
         
      
         
         <li class="nav-item">
-          <a class="nav-link">Hi <%= @user.email if @user %>!</a>
+          <a class="nav-link">Hi <%= @user.email if @user %>! (<%= @user.role %>)</a>
         </li>
+       
         
       <% end %>
   </div>
