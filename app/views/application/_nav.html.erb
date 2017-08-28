@@ -29,6 +29,12 @@
           </li>
         <% end %>
         
+         <% if @is_teacher %>
+          <li class="nav-item">
+             <a href ='/klasses' class="nav-link">Manage Classes</a> 
+          </li>
+        <% end %>
+        
         <a class="nav-link"><i class="fa fa-arrow-up"></i><%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "nav-link" %></a>
         
      

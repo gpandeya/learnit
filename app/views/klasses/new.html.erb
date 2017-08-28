@@ -1,0 +1,39 @@
+Create New Class
+
+<%= form_with(model: @klass, local: true) do |form| %>
+
+     <% if @klass.errors.any? %>    
+            <div id="error_explanation">     
+                <h2><%= pluralize(@klass.errors.count, "error") %> prohibited this Class from being saved:</h2>     
+                
+                <ul>      
+                    <% @klass.errors.full_messages.each do |message| %>        
+                        <li><%= message %></li>     
+        <% end %>     
+                </ul>   
+            </div> 
+        <% end %>  
+
+    <div class ='field'>
+        <%= form.label :name %>
+        <%= form.text_field :name, id: :name %>
+    </div>
+    <div class='field' >
+        <%=form.label :subject %>
+        <%=form.text_field :subject, id: :subject %>
+        
+    </div>
+    
+    <div class='field'>
+        <%= form.label 'label' %>
+        <%=form.text_field :level, id: :level %>
+    </div>
+    
+    <div class='field'>
+        <%=form.label 'credit' %>
+        <%= form.text_field :credit, id: :credit %>
+    </div>
+    <div class='action'>
+        <%= form.submit 'Create Class' %>
+    </div>
+<% end %>
